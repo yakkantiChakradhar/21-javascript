@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //..............................OBJECT.........................
+
+     /////////////////////////////..................////////////////////////////////////
+
+       /* ************************OBJECTS***************************** 
+
+OBJECTS -
+          An object is an non-primitive data type. Object holds multiple values in terms of properties (key and value pair) and methods.
+
+          object is a collection of properties.
+
+          object keys are always strings.
+
+    Syntax: - 
+                 let Object_name = {
+                    key 1 : value 1,
+                    key 2 : value 2,
+                    key 3 : value 3,
+                    ....  :  ...... ,
+                    ....  :  ......
+                    
+                }
+
+ex: - 
+        const car = {
+            brand: 'ferrari',
+            color: 'red',
+            seats: 2,
+            fuel: 'petrol'
+        }
+
+        console.log(car);    //....{brand: 'ferrari',color:'red',seats:2,fuel:'petrol'}
+
+        ////////////
+        ////////////
+There are three ways to create objects:
+             
+            1) ** Object Literal
+
+                Ex: -
+
+                const car = {
+                              brand: 'ferrari',
+                              color: 'red',
+                              seats: 2,
+                              fuel: 'petrol'
+                             }
+
+                             console.log(car);
+
+                              //....{brand: 'ferrari',color:'red',seats:2,fuel:'petrol'}
+
+            2) ** Object Constructor
+                  
+              const person = new Object();
+
+              person.fistName = 'sowmithri';
+              person.course   = 'web development';
+              person.phoneNum = 9440150667;
+              person.enrolled = true;
+
+              console.log(person);
+
+              //.....{fistName: 'sowmithri', course: 'web development', phoneNum: 9440150667, enrolled: true}
+
+              /////////////////////////////////////////////
+
+              Accessing the properties of an  object
+
+              *** dot notation 
+
+              const apple ={
+                             brand : 'Apple',
+                             model : 'iphone 14',
+                             price : 80000,
+                             date  : 'sep 7'
+              }
+ 
+                  const x = apple.model;
+
+                  const cost = apple.price;
+                  
+                  console.log(x);  //...iphone 14
+
+                  console.log(cost);  //...80000
+
+            *** bracket notation
+             
+                 const date = apple['date'];
+
+                 const exp = apple['price'];
+
+                 console.log(exp);   //... 80000
+
+                 console.log(date);  // .... sep 7
+
+
+
+            3) Object Constructor function
+
+///////////////////////////////////////////
+
+objects have two types of properties
+
+1) hasOwnProperty
+
+ console.log(apple.hasOwnProperty('price'));  //...true
+
+ console.log(apple.hasOwnProperty('kels'));   //...false
+
+
+2) Object.keys()
+
+const keys = Object.keys(apple);
+
+console.log(keys); //...['brand', 'model', 'price', 'date']
+
+3) Object.values()
+
+const values = Object.values(apple);
+
+console.log(values); //...['apple','ipone 14', 80000, 'sep 7']
+
+4)Object.entries()
+
+
+const entries = Object.entries(apple);
+
+console.log(entries);
+
+//.... [Array(2),Array(2),Array(2),Array(2)]
+
+ >  0 : (2)['brand','apple']
+    1 : (2)['model','iphone 14']
+    2 : (2)['price', 80000]
+    3 : (2)['date','sep 7']
+
+    length: 4
+
+5) Object.create()
+
+  const a = {
+    msg : 'hello world'
+  }
+  const b ={
+    greet : 'hi there'
+  }
+
+  const obj = Object.create(a);
+
+  console.log(obj);
+
+  //... {}
+     > [[prototype]]:object
+        msg: 'hello world'
+
+6) object.assign()
+
+const b= Object.assign({},a);
+
+console.log(b);  // ...{msg : 'hello world'}
+
+7) object.freeze()
+
+const samsung ={
+                 brand : "samsung",
+                 model : 'galaxy 20'
+}
+
+to add key and values to an object we can by two ways dot notation
+and by bracket notation.
+
+samsung.price = 80000;
+
+console.log(samsung); 
+
+//...{brand : "samsung",model : 'galaxy 20',price: 80000)
+
+samsung['date'] ='sep 7';
+
+console.log(samsung);
+
+//...{brand : "samsung",model : 'galaxy 20',price: 80000, date: 'sep 7')
+
+samsung.model = 'galaxy s22 ultra'; // override the above mention value
+
+console.log(samsung);
+
+//...{brand : "samsung",model : 'galaxy s22 ultra',price: 80000, date: 'sep 7')
+
+***
+object.freeze() - it will not allow to add new properties and also not allow to modify existing property
+
+ex: -
+
+object.freeze(samsung);
+
+samsung.ram = '8 gb';
+
+samsung.model ="a21s";
+
+console.log(samsung); // it will not allowed to add the rproperrty to the object
+ and also not allowed to modify the existing property
+
+//...{brand : "samsung",model : 'galaxy s22 ultra',price: 80000, date: 'sep 7')
+
+8)object.seal() - 
+                 it will not allow to add new properties and also allow to modify existing property.
+
+    ex: -
+samsung.ram = '8 gb';
+
+samsung.model ="a21s";
+
+console.log(samsung); // it will not allowed to add the rproperrty to the object
+ and  allowed to modify the existing property
+
+//...{brand : "samsung",model : 'a21s',price: 80000, date: 'sep 7')
+
+
+  */
+
+
+    </script>
+    
+</body>
+</html>

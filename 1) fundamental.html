@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* 2015 ES6 is the modren javascript  */
+
+        // js is a dynamic and loosly coupled, it is a case sensitive language
+
+        ///////////////////////////////////////
+
+        // Values and Variables
+        
+        /* 
+        Variable - 
+                  these are the containers which stores/holds the data. 
+
+        Values  -
+                 These are the smallest information.
+
+                                
+         */
+        ///////////////////////////////////////////
+
+         //  Declaration 
+            /* 
+          **** before 2015 thers is only one      
+               declaration that is VAR
+            
+                   var x = 5 ;
+
+                   we can reassign the value of the variable
+
+                   2 types we can see the output
+
+                    1) DOM - the output will be shown in the document page
+
+                    document.write(x);
+
+                    2) console- which is used to show output in the inspect
+
+                    console.log(x);
+
+          **** another types of declaration is 
+              LET, CONST
+
+              let y = 10;
+
+              console.log(y);// y=10
+
+              y=20
+
+              console.log(y);// y=20
+
+              *we can change the value of variable in 
+               the LET declaration.
+
+              *in this LET declaration only used in the
+               loop condition.
+
+            
+              const z = 15;
+
+              *we can't change the value of variable in
+               the LET declaration.
+
+            */
+
+            // Difference B/w LET and VAR
+
+            /* if we have a block we r going to declare a variable
+
+              {
+                let name = "virat";
+
+                var score = 3;
+              } 
+
+              console.log(score);
+              // var declaration can acess outside the block
+         
+              console.log(name);
+              //but LET declaration we can't access the variable outside the block
+
+             */
+    ///////////////////////////////////////////
+
+    // DATA TYPES
+    
+    // based on the storage of values, where we need to store the data
+
+    
+
+    /* 
+    Two Types - 1) primitive datatypes
+                    * NUMBERS
+                    * STRINGS
+                    * BOOLEAN
+                    * UNDEFINED
+                    * NULL
+                    * SYMBOL
+                    * BIG_INT
+                    
+                2) Non-primitive / Reference datatypes
+                    * ARRAYS
+                    * OBJECTS
+                    * SETS
+                    * MAPS
+                    * FUNCTIONS
+     */
+
+     /////////////////////////////////////////////////
+     /////////////////////////////////////////////
+     ///////////////////////////////////////////////
+
+     // Rules while declaring a varibles
+
+     /* 
+     1) It should not be reserved keyword.
+          new,function,map,object,etc.,
+
+     2) It should not start with Numbers
+          1name,3solar
+       
+     3) It should contain only ( '$' and '_'  )   
+
+      */
+///////////////////////////////////////////////
+ 
+      // Operators - 
+                     /* 
+                     operator performs an operation and produce a result 
+                     */
+    /* 
+    * Arithematic Operators(+, -, *, /, %, ++, --)
+    * Assignment Operators (=, +=, -=, *=)
+    * Comparison Operators (==, ===, >, <, >=, <=, !=)
+    * Logical              (&&, ||, !)
+    * Conditional Terinary (?:)
+     */
+
+     // Arithematic Operators
+           /* 
+           let x=10;
+           let y=20;
+
+           const sum = x + y ;
+
+           console.log(sum);
+           //////////////////////////////
+
+           const sub = y - x ;
+
+           console.log(sub);
+//////////////////////////////
+
+           const product = x * y ;
+
+           console.log(product);
+//////////////////////////////
+           const div = y / x ;
+
+           console.log(div);
+//////////////////////////////
+           const rem = y % x ;
+
+           console.log(rem);
+//////////////////////////////
+           let i = 3;
+
+           console.log(++i); //prefix increment output is 4
+
+           console.log(i++); //postfix increment output willbe 4
+           console.log(i++); //now the output will be 5
+//////////////////////////////
+let i = 3;
+
+           console.log(--i); //prefix decrement output is 2
+
+           console.log(i--); //postfix decrement output willbe 2
+           console.log(i--); //now the output will be 1
+
+             */
+
+    // Assignment Operator
+    
+    /* 
+    let a=2;
+    let b=3;
+    //////////////////////
+    a += b // a = a + b;
+    console.log(a);
+
+    //////////////////////
+    a -= b // a= a-b;
+    console.log(a);
+
+     //////////////////////
+    a *= b // a= a*b;
+    console.log(a);
+
+     */
+
+     /////////////////////////////////////////////////
+
+     // Comparision Operator
+    
+     /* 
+     const name='peter';
+     const fname='peter';
+
+     const comp = name==fname; 
+
+     console.log(comp); // true
+
+     const name='23';
+     const fname= 23;
+
+     const comp = name==fname; 
+
+     console.log(comp); // true
+
+     const comp = name===fname; // strict comparision
+
+     console.log(comp); // false
+
+     /////////////////////
+     let m=10;
+     let n=20;
+     const comp1= m > n;
+     console.log(comp1); // false
+
+     const comp1= m < n;
+     console.log(comp1); // true
+
+     console.log(m > = n); // false
+
+     console.log(m <= n); // true
+
+
+///////////////////////////////////////////////////////
+
+// Logical Operators
+
+/* 
+
+const bol1 = true;
+const bol2 = true;
+
+console.log( bol1 && bol2) // true
+
+const bol1 = false;
+const bol2 = true;
+
+console.log( bol1 || bol2); // true
+
+let a = 10;
+let b = 20;
+
+const res = a>b && a<b ;
+console.log(res);  // false
+
+const res = b>a && a<b ;
+console.log(res);  // true
+
+////////////////////////////////////////
+///////////////////////////////////////
+
+//Type conversion- 
+converting a value from one datatype to another datatype ( The conversion take place manually or explicitly)
+  ** 
+  const year = "2022";
+
+  console.log(typeof year); // type of operator will show the what type of data we used ex:-"string"
+
+  const newYear = Number(year);
+
+  console.log(newYear); // number 2022
+
+  //newly declared as 
+   console.log(+year);
+
+   const char = "123$heloworld";
+ to extract the number we use below format
+   console.log(parseInt(char)); // 123
+
+   const char = "123.45$heloworld";
+   console.log(parseFloat(char)); // 123.45
+
+
+//Type coersion - 
+The language does conversion itself from one data type to another data type
+
+console.log("1" + 2);            // 12(concatination)
+
+console.log(2 + 3+'5');          // 55
+
+console.log(2+3+"hello"+5+6);    // 5hello56 
+
+console.log('hello'+'world');    // hello world
+
+let age = 20;
+
+console.log('i am' + age + ' years old'); // i am 20 years old
+
+
+
+/////////
+ 
+console.log(10 - "2");     // 8
+
+console.log("20" - '10'); // 10
+
+console.log('hi' - 10);   // Not A Number (NaN - falsy value)
+
+console.log(10 * '2');    // 20
+
+console.log(20 / '2');    // 10
+
+ */
+
+ /////////////////////////////////////////////////////////////////////
+ //////////////////////////////////////////////////////////////////
+
+ //.............TRUTHY AND FALSY VALUES ....................//
+
+ //** FALSY values -> (0, "", Undefined, Null, NaN)
+
+ // Apart from falsy values the remaining elements all are THRUTHY values.
+
+
+
+
+      
+
+    </script>
+    
+</body>
+</html>

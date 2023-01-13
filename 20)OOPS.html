@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // ***************** OOP's ************************
+
+        /* 
+         class --> Class are nothing but a blueprint, which we can create an object.
+
+        Instantiation --> The process of creating an object from class_ called instantiation.
+
+
+        const -user = {
+            user: 'peter',
+             password: 'gang', 
+            login(){ 
+                // login logic
+            },
+            sendMessage(){
+                //sending logic
+            }
+        }
+
+
+       // *** class -Example:-
+
+       // User{
+            user
+            password
+            email
+            login(password){
+                //login logic
+            }
+            sendMessage(str){
+                //sending logic
+            }
+        }
+
+
+       // *** Object_ Example: -
+
+        // new User('peter') // Instantiation The process of creating an object from class_ called instantiation.
+
+
+            /*                      /// Whatever the object is going to create is called *instance*, we can create many instance 
+                {
+                    user: 'peter'
+                password: 'king',
+                email: 'xyz@abc.com'        
+            }
+             */
+
+        // */
+
+        /* 
+        
+
+        Any OOP contains four basic fundamental principles.
+
+        Abstraction: -  
+                    Ignoring or hiding details that don't matter.
+
+        Encapsulation: -
+                    Keeping the properties and methods private inside the class 
+                      
+
+        Inheritance: -
+                     accessing the properties and methods of parent class along with it also can contain its own properties and methods
+
+                     JavaScript supports only single inheritance, it doesn't support multiple inheritance.
+
+        polymorphism: -
+
+        poly means many forms,
+                   A child class can overwrite a method which is inherited from parent class.
+        */
+
+
+        /////////////////////////////////////////////////
+        //////////////////////////////////////////////////
+
+        /* 
+
+        Now IT's come's to learn Object Oriented Programming in JAVASCRIPT. 
+
+        JavaScript doesn't support Real OOP, it supports only Prototypical Object only. 
+
+
+     
+        3 ways we can implement this prototypical objects.
+
+        1. Constructor function
+        2. ES6 class
+        3. Object.create()
+
+        /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+        ***** USING Constructor Function
+
+        const person = function(name, year){
+            this.firstName = name;
+            this.birthYear = year;
+        } 
+
+        person('peter', 1995); // it is a normal function calling
+
+        new person('peter', 1995);
+
+// if we call a function with NEW keyword it will become constructor function
+        */
+
+        const area = function(len,bre){
+            this.areaLength = len;
+            this.areaBreadth = bre;
+                    }
+console.log(area);
+            const firstFloor = new area(1500, 1250);
+            console.log(firstFloor);
+
+            area.prototype.findingArea = function(){
+                const calc  = this.areaLength*this.areaBreadth;
+                console.log(calc);
+            }
+
+            firstFloor.findingArea();
+ const secn = new area(600,1250);
+ console.log(secn);
+ secn.findingArea();
+
+
+        const audII = function(day,name){
+            this.dayOfDelivery = day;
+            this.nameOfProduct = name;
+        }
+
+        const client = new audII();
+
+        console.log(client);
+
+
+
+     const person = function(name, year){
+            this.firstName = name;
+            this.birthYear = year;
+        } 
+
+       const peter = new person('peter', 1995);
+       console.log( new person('jessica000', 1996));
+
+        person.prototype.calcAge=function(){
+            console.log(2022 - this.birthYear);
+        }
+
+        console.log(peter);
+
+        // since we have calcAge, how to call a method in the object
+
+        peter.calcAge();
+
+        person.prototype.species = 'Homo Sapiens';
+
+        console.log(peter.hasOwnProperty('firstName'));
+        console.log(peter.hasOwnProperty('species'));
+
+
+        console.log(person.__prototype === peter.__prototype);
+
+       /* 
+       whenever we call a normal function with NEW keyword its going to create an empty object.
+
+       THIS keyword is going to set to this empty object
+
+       this {} object is going to linked to the constructor function prototype.
+
+       It returns the object in the variable.
+
+
+        */
+
+
+        ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+        //..........ES6 classes
+
+
+        /* 
+         there are two types of implementation of es6 classes
+
+         1. class expression
+
+         const PerFex = class {
+
+         }
+
+         //** in this we have one convention, we use camel case while we declaring a variable. but in this classes we aren't using this camel cases
+
+         2. class declaration
+
+         class PersCl{
+            // every class will contain the constructor method, which initialize the properties for the method
+
+            constructor(name,year){
+                this.firstName = name;
+                this.birthYear = year;
+
+            }
+            calcAge(){
+                console.log(2022-this.birthYear);
+            }
+         }
+
+         const peter = new PersonCl('peter', 1995);
+         console.log(peter);
+
+         const jessica = new PersonCl('jessica',1998);
+         console.log(jessica);
+
+         jessica.calcAge();
+
+
+
+         *** classes are NOT Hoisted.
+         *** classes are first class citizens
+         *** classes are executed in strict mode.
+
+        */
+
+
+
+    </script>
+    
+</body>
+</html> 

@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        //......>>....For-of Loop
+        
+        /* const num = [2,3,4,5,8,6,9,7];
+ */
+        // ex: -
+       /*  for(let ele of num){
+                             console.log(ele);
+                            } */
+       //.. 2,3,4,5,8,6,9,7
+
+
+        // Ex: - To get the index we use
+
+        
+
+       /*  for(let el of num.entries()){
+            console.log(el[0],el[1]);
+        } */
+        // we can use destructuring...
+
+
+        /* for(let [i,elem] of num.entries()){
+            console.log(i,elem);
+        } */
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+//....>>>>>.......For-in loop.......<<<<<<<
+
+// The only loop which can  be iterable over the Objects, by accessing the keys.
+
+
+/* const obj = {
+    a:1,
+    b:2,
+    c:3,
+    d:4,
+    e:5
+};
+for(let key  in obj){
+   // console.log(key);       // a,b,c,d,e
+
+   console.log(obj[key]);    //  1,2,3,4,5
+} */
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+// ................-------- >>>> ..... Advance array methods ...... <<<< -------............................
+
+// It works base on callback functions
+
+// forEach() :-
+
+
+//exactly works like for look,its an array method, prototype of an array
+
+/* const num = [2,3,4,5,8,6,9,7];
+
+// syntax: -
+
+//    array.forEach((current element, index, array)=>{})
+
+num.forEach((ele, i,arrr)=>{console.log(i, ele,arrr);}) */
+
+
+
+/* const arr = [1,2,6,3,4,1,2,5,2,1,4];//[1,2,3,4]
+
+const res = [];
+arr.forEach((ele)=>{
+  
+    if(!res.includes(ele)){
+        res.push(ele)
+    }
+})
+
+console.log(res); */
+
+
+
+ /* 
+ .............- - - - - >>>......... MAP .......... <<< - - - -...........
+
+ ** Input to the MAP must expects an array.
+
+ ** through call back function we will make our required functionallity
+
+ ** Output of the MAP will also be an array.
+
+
+ ............. >>> .... FILTER ....... <<< .........
+
+
+ ............. >>> .... REDUCE ....... <<< .........
+
+ Snowball Effect: - Input will be Array and then the output will be undefined.
+ */
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+ // ..........-->>>>> map method example: -
+
+ /* const numm = [2,5,3,6,4,1,7];
+
+ const ress = numm.map((ele)=>{
+    return ele + 5;
+ })
+ console.log(ress);
+
+ //// benfit of using arrow function we can modify above mentioned function as the below
+
+ const nummm = [2,5,3,6,4,1,7];
+
+ const resss = num.map((ele)=> ele + 5); 
+ 
+ // here we dont need to using the return keyword will we use the arrow function we can directly access the without using the return keywords
+
+ console.log(resss);
+
+
+
+ // Ex:-   
+console.log('..........................................<br/>.......................');
+     const fridge = ['LG','Panasonic','butterfly'];
+
+
+     const emp = [];
+
+     const ouT = fridge.map((ele)=>{
+        if(!emp.includes(fridge)){
+         emp.push(ele);
+        }
+console.log(emp);
+     });
+      */
+
+
+
+
+ ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+ ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+ // ............................-->>>>> Filter method example: -
+ /* const numm = [2,5,3,6,4,1,7];
+        const filtered = numm.filter((ele)=>{
+            return ele>=5;
+        });
+
+        console.log(filtered);
+
+
+const smartPhone = [
+    {brand: 'RedMI',     model: 'Note 11 pro', ran: 4},
+    {brand: 'Oppo',      model: 's11',         ran: 5},
+    {brand: 'Vivo',      model: 'y20',         ran: 6},
+    {brand: 'Realme',    model: 'Nord 2',      ran: 8},
+    {brand: 'OnePluse',  model: 'Nord',        ran: 3},
+    {brand: 'samsung',   model: 'Galaxy',      ran: 2},
+    {brand: 'Apple',     model: 'Pro max',     ran: 4}
+];
+
+
+const phone = smartPhone.filter((ele)=>{ return ele.ran >= 4;})
+
+          console.log(phone);    */               
+                            
+////////////////////////////////////////////////////////////////////////////////////////////////////////
+ ////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+ //..........................-->>>>> Reduce method example: -
+
+ // As we have a snowball effect in this reduce array method we need to provide the temperary variable to store the values
+                            
+ //....Syntax: -
+
+/* const variable_name  = array.reduce((accumulator,elements of array)=>{}, accumulator initialize) */
+
+  /* const num = [2,5,3,6,4,7,8,9];
+
+  const res = num.reduce((acc,ele)=>{
+    return acc + ele;
+  },);
+
+  console.log(res);
+
+  const resArr = num.reduce((acc,ele)=>{
+    if(ele >= 5){
+        acc.push(ele);
+    }
+    return acc;
+  },[]);
+  console.log(resArr); */
+
+
+  /////////////////////////////////////////////////////////
+  /////////////////////////////////////////////////////
+  ///////////////////////////////////////////////////
+
+
+  //....................-->>> ..Find array Method..<<<............
+
+  /* 
+   In this find array method, the condition which was given by the user it going find the element which suits for the condition, then it will return to the result the operation will stop there itself then after it will not process to the further check of the condition
+   
+  */
+
+/* const num = [23,5,4,8,56,7,69];
+
+const res = num.find((ele)=>{
+    return ele>14;
+});
+console.log(res) */
+
+/////////////////////////////////////////////////////////
+  /////////////////////////////////////////////////////
+  ///////////////////////////////////////////////////
+
+
+  //.........-->>>FindIndex array Method..<<<............
+
+  /* 
+  It will be same as like the find method, inorder to return the value it will the return the index value of the value
+  */
+  /* const num = [23,5,4,8,56,7,69];
+
+const res = num.findIndex((ele)=>{
+    return ele>50;
+});
+console.log(res);  */
+
+/////////////////////////////////////////////////////////
+  /////////////////////////////////////////////////////
+  ///////////////////////////////////////////////////
+
+
+  //.........>>> ..SOME array Method..<<<............
+
+/* const num = [23,5,4,8,56,7,69];
+
+const res = num.some((ele)=>{
+    return ele<50;
+});
+console.log(res);  */// if any value is return for the condition it will returns boolean values
+
+/////////////////////////////////////////////////////////
+  /////////////////////////////////////////////////////
+  ///////////////////////////////////////////////////
+
+
+  //.........>>> ..Every array Method..<<<............
+
+  /* const num = [23,5,4,8,56,7,69];
+
+const res = num.every((ele)=>{
+    return ele<50;
+});
+console.log(res);  */
+
+// It going to check every element in the array so that if any one of the value not suits for the condition it will return the value of false.
+
+/////////////////////////////////////////////////////////
+  /////////////////////////////////////////////////////
+  ///////////////////////////////////////////////////
+
+
+  //.........>>> ..Flat array Method..<<<............
+/* 
+  const num = [[23,5,4],[8,[56,7]],6,8,69]; // In this flat method every nested array will become flat to one dimensional array
+
+console.log(num);
+
+const flatArr = num.flat();
+console.log(flatArr);
+
+
+/// how to get the nested array to one dimensional array with out using flat method
+
+const res = [];
+
+function recurs(ele){
+    ele.forEach((mov)=>{
+                         if(Array.isArray(mov))
+                                               {recurs(mov)}
+                                                else
+                                               {res.push(mov)}
+                        }
+                        )
+                      };
+            recurs(num);
+            console.log(res); */
+
+            /////////////////////////////////////////////////////////
+  /////////////////////////////////////////////////////
+  ///////////////////////////////////////////////////
+
+
+  //.........>>> ..FlatMap array Method..<<<............
+
+  /* const statements = [
+    {name:'sunil', acc:[1,2,3]},
+    {name:'Vinay', acc:[4,5,6]},
+    {name:'Praveen', acc:[7,8,9]},
+   ]
+// before flatmap 
+      const res = statements.map(ele=>ele.acc).flat().reduce((acc,ele)=>acc + ele,0);
+      console.log(res);
+      // after the flatmap method introduces
+
+      const ress = statements.flatMap(ele=>ele.acc);
+      console.log(ress);
+*/
+
+ /////////////////////////////////////////////////////////
+  /////////////////////////////////////////////////////
+  ///////////////////////////////////////////////////
+
+
+  //.........>>> ..Sort array Method..<<<............
+/* 
+In this sort method the original array will be effected while we use this method.
+
+upto this the all methods in advance array methods the main array will not be effected 
+*/
+/* const fruits = ['kiwi','mango','grapes','apple','pineapple','orange'];
+
+fruits.sort();
+console.log(fruits); */
+
+/* 
+According to the ASCII value numbers the elements going to arrange alphabetically
+*/
+
+// const num = [2,3,5,4,1,3,6,8,9,1];
+ 
+//  const num = [120,36,-235,685,-91,50,-150];
+
+
+
+/* num.sort((a,b,c)=> {
+  if(a>b){
+    return 1
+  }
+  if(a<b){
+    return -1
+  }
+});
+ */
+
+//  num.sort((a,b)=>a-b)
+// console.log(num);
+
+
+
+    </script>
+    
+</body>
+</html>

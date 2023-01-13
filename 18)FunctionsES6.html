@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <button>click Here</button>
+
+    <script>
+        /////////////////////////////////////
+        //....Functions.........
+        
+        /* 
+        First class function or citizen function: -
+
+        the function which is considered as the value known as First class function.
+
+        ** JS has a fundamental property called first class functions helps to write higher order function. 
+         
+        in JS 
+        -> Js treats functions as first class citizens.
+        -> Functions are treated as simply values.
+        -> Functions are another type of an object.Objects are consists values so function are also treated as  values.
+         */
+
+         let x = 10; // here x is a variable
+
+         let add = function(a,b){return a + b};
+         // the function which is considered as the value.
+
+         function print(num){
+            console.log(num);
+         }
+
+         print(function (a,b) {return a + b});
+         ///////////////////
+         const obj = {
+            name: 'peter',
+         }
+        
+
+         const btn =  document.querySelector('button');
+         btn.addEventListener('click',()=>{console.log('button was clicked');});
+
+         // in this arrow function is treated as a value. so this form is know as first class function
+
+
+         /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+         //... Higher order function...................
+        //     `````````````````````
+
+        //  Any function that receives another function as an argument, that returns a new function, or both
+         /* 
+
+            If a function behaves in two ways then it work as an higher Order function.     
+            
+          *** 1) Any function that receives another function as an argument is called high Order function.
+
+           const btn =  document.querySelector('button');
+
+         btn.addEventListener('click',()=>{});
+
+         ---here addEventListener is receiving the arrow function as an argument so this 'addEventListener' is a High order funciton.
+
+
+           *** 2) Any function that returns another function also a high order function.
+
+           function count(){
+            let counter = 0;
+            return function(){
+                counter ++;
+                console.log(counter);
+            }
+        }
+
+        let newFn = count();
+        newFn();
+
+         */
+
+         ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+         //....................CallBack function
+
+
+         /* 
+         Any function which is passing as an argument into another function is called callback function.
+
+
+         " Javascript is best" -> 'JAVASCRIPT is best'
+         
+
+
+         */
+        // call back function
+
+function firstWordUpper(str){
+    const [first, ...others]= str.split(" ");
+
+    return [first.toUpperCase(), ...others].join(' ');
+    }
+        // higher order function
+        function textTrans(str,fn){
+console.log(`input string:${str}`);
+console.log(`converted string :${fn(str)}`);
+        }
+
+        textTrans("Javascript is best",firstWordUpper);
+
+        //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    
+        /////////////////////////////////////////////////
+        ////////////////////////////////////////////////
+        ///////////////////////////////////////////////
+
+        //..........................Call, Apply and Bind
+
+        const apple = {
+            brand: 'apple',
+            model: 'iphone 14',
+            price: '70k',
+           /*  info: function(mon, year){
+                console.log(`${this.brand} ${this.model} was released on ${mon}, ${year} `); 
+                
+                
+                //*** above mentioned is literal*/
+
+                // Enhanced object literal
+                 info(mon, year){
+                console.log(`${this.brand} ${this.model} was released on ${mon}, ${year} `);
+            } 
+
+
+        }
+
+       //apple.info('sep',2022); It's an old way 
+
+        const samsung = {
+            brand: 'Samsung',
+            model: 'Galaxy S22',price: '75k'
+        };
+
+        const printInfo = apple.info;
+
+        //printInfo('sep',2022);
+
+         ///// the mentioned will be Undefined
+
+
+        ///.....................
+        // call Method: - 
+        //......................
+        /*  Call method allows us to manually set this keyword of any function that we want to call */
+
+        /* printInfo.call(apple,'aug',2022);
+
+        printInfo.call(samsung,'Mar',2022);
+ */
+
+        ///////////////////////////////////////////////////
+        
+        //........ Apply
+
+        /*
+        It's exactly same as call method, the only difference is that apply doesn't receive list of arguments after the this keyword, but It's going to take an array of an arguments.
+        */
+
+        const date = ['Mar', 2022];
+
+        //.printInfo.apply(samsung,date)
+
+        //.. apply method is not using now a days, instead of that we can use spread operator to spread the items in an array, in call method itself we can spread the data.
+
+        printInfo.call(samsung,...date)
+
+        //////////////////////////////////////////////////////////////////
+        // ....Bind
+
+        /* jsut like call method bind also allows to manually set this keyword for any function call, the difference is bind doens't immediately call the function, where instead it returns a new function  where this keyword is bound*/
+
+        console.log(`...............BIND................`);
+
+        const bindToApple = printInfo.bind(apple);
+        const bindToSamsung = printInfo.bind(samsung);
+
+        bindToApple('sep',2022);
+        bindToSamsung('mar',2022);
+
+        /////////////////////////////////////////////////////////
+        /////////////////////////////////////////////////////////
+
+     /* Example over Call apply bind these are used to add this keyword manually. */
+           
+     // creating an object adding a method to it..
+     console.log(`..........`);
+     console.log(`..........`);
+     console.log(`..........`);
+      console.log(`.....Example.....`);
+
+     const car = {
+        brand : 'audii', color: 'black', info: function (mon,year){
+            console.log(`The Mechanisam of ${this.brand} with color ${this.color} have an order to deliver by ${mon} of ${year}`)
+        }
+     }
+     const car2 = {
+        brand : 'Ferari', color: 'Red',}
+
+    car.info('Jan',2023);
+
+    console.log(`..........`);
+    console.log(`..........`);
+    console.log(`.....Example of call.....`);
+
+    let infoCar = car.info;
+    infoCar.call(car,'may',2023);
+
+
+    console.log(`..........`);
+    console.log(`..........`);
+    console.log(`.....Example of apply.....`);
+ let dat = ['jan',2024]
+infoCar.apply(car,dat);
+infoCar.call(car,...dat);
+
+     console.log(`..........`);
+     console.log(`..........`);
+     console.log(`.....Example of Bind.....`);
+
+     const bindCar = infoCar.bind(car2);
+     bindCar('Dec',2023);
+
+
+    
+
+        /////////////////////////////////////////////////////////
+        /////////////////////////////////////////////////////////
+
+        //.................Closures..>>>>>>>>>>>>>>
+
+        /* 
+        Any function always access to the variable environment of the execution context in which the function was created even after the execution context of the function which gives birth . the closure is then basically  this variable environment to the fucntion exactly at the time and place the funciton was created */
+      
+         function count (){
+            let counter = 0;
+
+            return function () {
+             counter++;
+             console.log(counter);
+            }
+         }
+
+         let getCount = count();
+         getCount();
+         getCount();
+
+         "use strict";
+
+console.log(`--example of closure------`);
+
+
+          function namE(){
+            let mag = 2;
+
+            return function () {
+
+                mag++;
+                console.log(mag);
+            }
+        }
+        let getIt = namE();
+        getIt();
+        getIt();
+        
+        
+        /////////////////////////////////////////////////////////
+        /////////////////////////////////////////////////////////
+        
+        /////////////////////////////////////////////////////////
+        /////////////////////////////////////////////////////////
+
+        //.........>>>>>.....IIFE --> (Immediately  Invoked Function Expression).....<<<<<
+
+        //   ()();
+
+        // The function can be executed as many times when we call the function
+        const msg =function(){
+            console.log('Function should be called at Once');
+
+        }
+        msg();
+        console.log('hello world');//after some code execution we can the function but in IIFE we can call the function only one time. then after the  function will be dead.
+
+        msg();
+
+        // Instead of calling funtion contineously it we can call it only by using IIFE
+
+        (function (){
+            console.log('--------------');
+            console.log('Example for Immediately invoked Function Expression');
+        })();
+
+        console.log('if we call the function 2nd time it will not be executed It will thorw errors');
+
+        ///////////////////////////////////////////////////////////////////////////////////////////////
+        //////////////////////////////////////////////////////////////////////////////////////////////
+        ///////////////////////
+        ///////////////////////////////////////////////////////////////////////////////
+
+        //......>>>......Function Currying.....<<<
+        // Technique in which we converts functions into multiple arguments..
+
+// old
+        function area1(len,bre){
+            return len*bre;
+
+        }
+console.log(area1(2,5));
+
+// new
+
+      function area(l){
+      return function(b){
+        console.log(l*b);
+      }
+      }
+
+      area(2)(3);
+     
+
+
+
+
+
+
+
+
+
+    </script>
+    
+</body>
+</html>

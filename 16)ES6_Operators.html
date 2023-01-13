@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+    /*     /* 
+        Destructuring in JS is a simplified method of extracting multiple elements from an array.
+
+        Array Destructuring uses position of an element
+
+        */
+        //....................ES6 Operators...............
+      /////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        // const country = ['India','Italy',"USA",'UK',"Australia"];
+// old way to access the array values
+        /* const a = country[0];
+        const b = country[1];
+         const c = country[2];
+
+        console.log(a,b,c); */
+
+        const family = ['great grand parents','grandparents','parents','childrens'];
+
+        const f1=family[0];
+        const f2=family[1];
+        console.log(f1,f2);
+
+        const [f3,f4,f5,f6]= family;
+        console.log(f3,f4,f5,f6);
+
+        
+
+
+// New way which means Modren Operators
+      /*
+       by using Destructuring we can access the values in  the array
+       
+       
+        */
+       //.. ORiginal--> const country = ['India','Italy',"USA",'UK',"Australia"];
+      //  const [a,b,c] = ['India','Italy',"USA",'UK',"Australia"];
+       
+        // console.log(a,b,c); // India,Italy,USA
+
+        // console.log(country); ...> Original array not going to disturb.
+
+        /* Ignoring some values in between the array */
+
+      //  const [x,,,y] = ['India','Italy',"USA",'UK',"Australia"];
+      
+        // console.log(x,y); //India,Uk
+
+
+///////////////////////////////////////////////////////////////////////////
+//////... Nested Array ...
+
+         // .. old way to access USA
+         /* const nations =  ['India',['Italy',["USA",'UK']],"Australia"];
+       
+         const i = nations[1][1][0];
+         console.log(i);  //USA */
+// .. new way
+//const [i, [j,[k,l]]] =  ['India',['Italy',["USA",'UK']],"Australia"];
+//console.log(k,l);  //USA,UK
+
+////////////////////////////////////////////
+
+//default values
+ 
+//const [e,f,g] = [1,2]
+
+//console.log(e,f,g); // 1, 2, undefined
+
+//const [e,f,g=3] = [1,2,7]
+
+//console.log(e,f,g); // 1, 2, 7 ... g value will be supply value instead of default value
+ 
+
+
+
+/////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////// 
+//...........Destructuring Objects........................
+       
+const person = {
+    name: 'peter',
+    father: 'Xavier',
+    hobbies: ['singing','Cycling','Cooking','Travelling'],
+    friends: ['mark','nick','kyle']
+}
+
+/* const a = person.name;
+console.log(a); */     ///...........old way accessing the element of object.
+
+/* const { name, friends, father} = person;
+
+console.log(name,friends,father); */ // peter  (3)['mark','nick','kyle']  Xavier
+
+
+// Renaming the variable
+ 
+   /* const {name:firstName, father:parent} = person;
+
+   console.log(firstName,parent); */ // peter  Xavier
+
+   //........Nested Object
+//..new way
+   const { b:{ d }} = {
+    a: 1,
+    b: {c: 2, d: 3},
+    e: 4,
+   }
+
+console.log(d);
+//..old way
+/* const num = {
+    a: 1,
+    b: {c: 2, d: 3},
+    e: 4,
+   }
+ 
+   console.log(num.b.d); */
+
+   // Default valuess of non Existing property
+
+   const {father, mother='mary'} = person;
+
+   console.log(father, mother);
+
+   /////////////////////////////////////////////////////
+   ////////////////////////////////////////////////////
+   //.......Spread Operator
+
+   /* It takes all the other elements in the array which have no variable mapped to them and then maps it to the rest variable . */
+
+const fruits = ['apple','orange','mango'];
+const veg = ['beans','tomato','carrot',...fruits];
+
+console.log(veg);
+
+const newPerson = {...person,mother:'jessica'};
+console.log(newPerson);
+
+//console.log([...person]);// Spread operator can spread Object inside an array, spread Operator doesnt expects keys and values.
+
+/////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////
+//.....Rest Pattern and parameters
+
+/* A rest parameter is used to map all the remaining elements in the array that have not been mapped to the rest variable itself the rest variable must always be the last  */
+
+const country = ['India','Italy',"USA",'UK',"Australia"];
+
+const [a,b,...others]=country;
+console.log(a,b,others);
+
+
+const num  = [2,3,4,5,6];
+
+function printNum(numbers){
+  for(let i=0;i<numbers.length;i++)
+  console.log(numbers[i]);
+}
+ printNum(num);
+
+
+ ///////////////////////////////////////////////////////////
+ ///////////////////////////////////////////////////////
+ //..........Short Circuiting
+
+ /*  In this short circuit the values will be check from left to right in the logical Opertions
+ 
+  in this if we find the falsy values according to the operations(||,&&,!) the output will be decided
+
+  ||(OR operation)
+
+  console.log(falsy values || truthy values);// truthy values
+
+  in multiple OR operations in one element ..The output will be return where the operation find truthy values itself
+
+  similarly  
+ */
+
+
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//.......NUllish Coalescing................
+
+const car = {
+  make: 'honda',
+  kms: 0
+}
+
+//const distance =  car.kms || 10000;
+//console.log(distance); // 10000
+
+// in this we have seen that the values of kms is exits but its a falsy values. so the output will be defined as the last existing condition in the above mention feilds.
+
+
+// To get back to this error we use this nullish coalesing to build the bug in correct way.
+
+/* 
+NULLISH COALESING: -
+    (??)
+`````````````````
+If the values are null and undefined then we use this nullish Coalescing.
+*/
+const distance =  car.kms ?? 10000;
+console.log(distance); 
+// here the output will be '0' declared values will be given
+
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////.........Optional Chaining(?.)..............
+
+// lets think data is coming from backend 
+
+const resturant = {
+  name: 'starbucks',
+  openingHours: {
+    thu: {
+      open: 12,
+      close:22
+    },
+    fri:{
+      open: 11,
+      close:23
+    },
+    sat:{
+      open: 11,
+      close:23
+    }
+  }
+};
+
+//console.log(resturant.openingHours.mon);
+// undefined
+//console.log(resturant.openingHours.mon.open);
+// error will be apper and entire application will be block
+
+
+/* if(resturant.openingHours.mon){
+  console.log(resturant.openingHours.mon.open);
+  
+}
+ */
+
+// instead of using above mention thing we can use short circuit
+
+//--> resturant.openingHours.mon && resturant.openingHours.mon.open
+
+
+// instead of writing all these we can exit better implimentation
+
+console.log(resturant.openingHours?.mon?.open)
+
+const days = ['mon','tue','wed','thu','fri','sat','sun'];
+for(let i=0;i<days.length;i++)
+{
+  const start = resturant.openingHours[days[i]]?.open?? 'closed';
+
+  if(resturant.openingHours[days[i]]){
+  console.log(`on ${days[i]}, we open at ${start}`);}else{
+    console.log(`on ${days[i]}, we are closed`)
+  }
+}
+</script>
+    
+</body>
+</html>

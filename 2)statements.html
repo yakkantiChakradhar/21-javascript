@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //////////////////////////////////////////////////////
+        ////////////////////////////////////////////////////////
+
+        // Templet literal or String literal
+
+       /* 
+       let age = 26;
+       
+       let name ='peter';
+
+       console.log(name + " 's age is " + age);    //peter's age is 26
+
+       document.write(`${name}'s age is ${age}`);  //peter's age is 26 
+       */ 
+////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////
+ 
+ //Blocks
+
+// 1) IF statement
+ 
+                  /* 
+                     if conditional statement is used if you want to execute something based  
+                     on some conditions
+                     
+                     **syntax :- 
+                               if(condition){
+                                // code to be executed
+                               }
+                             ex:- 
+                                 let age1 = 25;
+                                 let age2 = 30;
+
+                                 if(age1<age2){
+
+                                    alert('person 1 age is lesser than person 2 age');
+                                 }
+
+                                 if the code is need to be written in one statement so there is no need of using the braces we can load the code directly as mentioned below
+
+                                 if(age1<age2) 
+                                 alert('person 1 age is lesser than person 2 age');
+
+                     */
+
+    // IF-ELSE statement
+                  /* 
+                  use ELSE statement when you want to execute the code every time when if condition evaluates to false
+
+                  **syntax :- 
+                               if(condition){
+                                // code to be executed
+                               }else
+                               {
+                                // code to be executed
+                               }
+
+                               ex:- let age=15;
+                                if(age>=14){
+                                    alert('student is allowed to admit high school');
+                                }else
+                                {
+                                    alert('student is not  allowed to admit high school');
+                                }
+
+                  */
+    // ELSE-IF condition
+    /* 
+    let age = 14;
+
+     if(age>=14){
+
+        console.log(`student age is allowed to admit high school since his/her age is ${age}`);
+
+             }else if(age>=11 && age<14){
+
+                console.log(`student age is allowed to admit middle school since his/her age is ${age}`);
+
+             }else{
+
+                console.log(`student age is allowed to admit elementary middle school since his/her age is ${age}`);
+                             }
+    */
+   
+    ///////////////////////////////////////////////////////
+    
+    // Switch Statement
+
+    /* Switch statemenet is type of conditional statement that execute an  expression against multiple possible cases
+    
+    syntax :- 
+      
+              switch(expression){
+                case x: 
+                        // statement 1 to execute
+                        break;
+                case y: 
+                        // statement 2 to execute
+                        break;
+                        ........
+                        ........
+                        ........
+                        ........
+                default: 
+                         // statement execute                
+              }
+
+     ex: -  
+             const day = "wednesday";
+
+             switch(day){
+                case "sunday" :
+                                console.log("it's sunday");
+                                break;
+                case "monday" :
+                                console.log("Happy monday");
+                                break;
+                case "tuesday" :
+                                console.log("it's tuesday");
+                                break;
+                case "wednesday" :
+                                console.log("Hump day Already!");
+                                break;
+                case "thursday" :
+                                console.log("Just one more day till weekend");
+                                break;
+                case "friday" :
+                                console.log("Happy friday");
+                                break;
+                case "saturday" :
+                                console.log("Have a wonderful saturday");
+                                break;
+                defalut : 
+                           console.log("please enter the day in a week");
+             }
+    */
+   /* 
+   const grade =50;
+
+   switch (true){
+    case grade>=90:
+                   console.log("A");
+                   break;
+    case grade>=80:
+                   console.log("B");
+                   break;
+    case grade>=70:
+                   console.log("B+");
+                   break;
+    case grade>=60:
+                   console.log("c");
+                   break;
+    case grade>=50:
+                   console.log("D");
+                   break;
+    default:
+             console.log("F");    
+   }
+
+   */
+
+   /////////////////////////////////////
+
+   //Ternary Operator(?:)
+
+   /* 
+   A Special operator that assigns a value to a variable based on character.
+
+   syntax: -
+
+   const variable_name = (condition) ? Value 1 : Value 2;
+
+   ex: - 
+          const age = 10;
+          const isAllowed = age > 14 ? 'student allowed to admit HS' : 'Student is not allowed to HS';
+
+          console.log(isAllowed);
+            
+   */
+
+
+   // coding Principle
+
+   // 1) DRY - Don't Repeat the Code
+   // 2) SOC - Seperate Of Consern's
+
+    </script>
+    
+</body>
+</html>

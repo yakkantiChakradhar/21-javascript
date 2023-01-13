@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+ ////////////////////////////////////////////////////////////////////////////////////
+ ///////////////////////////////////////////////////////////////////////////////////
+
+ // ...........................STRINGS............................//
+
+ /* 
+ Strings - Sequence of characters or group of characters.
+
+ String are primitive datatype, it must be enclosed in single or doulbe quotes
+
+ in jS everything is an object
+
+ Two ways to create string - 
+            
+              ** 1) String literal
+
+               // by using string literal the data will be as an string itself
+
+               let str = "hello world";
+
+               console.log(typeof str); //..string
+
+               ** 2) String constructor
+              
+                //but while we are using string constructor the data will be an  Object
+
+                let newStr= new String("It's 6'o clock");
+
+                console.log(newStr); // ..Object
+
+
+
+ ex - 
+     let str = "hello world";
+     
+     strings are immutable
+
+     console.log(str[3]); // 'l'
+
+     for(let i=0; i<str.length; i++)
+     {
+        console.log(str[i]);
+     }
+
+
+*/
+
+///////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////
+
+//..................String Methods .....................//
+
+// let a = prompt("enter the value");
+//let course = "UI Development AIT AIT";
+
+// to find length of the string we can use the length method mentioned below
+
+//console.log(course.length);
+/* 
+1) indexOf() -
+                Returns the index of first occurance of given character.
+
+                console.log(course.indexOf('AIT'));        // ..15
+
+2) lastIndexOf() -
+                  Returns the last index of given character
+
+                  console.log(course.lastIndexOf('AIT'));   //..19
+
+3) charAt()-
+              return character at specified index
+              
+              console.log(charAt(10));                    //..m     
+              
+4) charCodeAt() -
+                 Returns ASCII code of the character at the index
+                
+                  console.log(charCodeAt(0));            //..85
+
+let char = '!hel23lo$';
+
+for(let i=0; i<char.length;i++){
+    //.. it is a Dry code
+    if(char.charCodeAt(i)>=65 && char.charCodeAt(i)<=90 || char.charCodeAt(i)>=97 && char.charCodeAt(i)<=122)
+    //..instead of using DRY code we can reduce the code and develop them
+    let x=char.charCodeAt(i);
+    if(x>=65 && x<=90 || x>=97 && x<=122)
+    {
+        console.log(char[i]);
+    }
+}
+                                                      //..hello
+
+depricated -> don't use this things. it's the old version there is another new  version of that had been implemented so you can use that.
+
+5)subString()-
+              extraacting portion of the string
+
+              console.log(course.subString(3,14));
+
+6)split() -
+            It converts string into array
+
+          ** console.log(course.split());
+
+    //.. it converts string in to array ['UI development AIT AIT']           
+
+          ** console.log(course.split(' '));
+
+ //.. it converts each string in to array , where it founds spaces ['UI','development', 'AIT', 'AIT']
+
+           ** console.log(course.split(''));
+
+ //.. it converts each alphabet string in to array , we just not want to make space between the invented comma ['U','I',' ','d','e','v',e','l','o','p','m','e','n','t',' ','A','I','T',' ','A','I','T']
+
+
+7) replace() - 
+               replace old word with new word.
+
+               console.log(course.replace('AIT', 'course'));
+
+               //.. UI development course AIT
+
+8) replaceAll() -
+                   replaces all the same old word to change with new word
+                   
+                   console.log(course.replaceAll('AIT', 'course'));
+
+                   //..UI development course course
+
+9) toLowerCase() -
+                  it converts string into lowercase
+             
+                   console.log(course.toLowerCase());
+
+                   //.. ui development ait ait
+
+10) toUpperCase() -
+                  it converts string into uppercase
+             
+                   console.log(course.toUpperCase());
+
+                   //.. UI DEVELOPMENT AIT AIT
+
+11) search() -
+               returns index of given character
+
+               if the word we search is available then it returns the index number of that string
+
+               console.log(course.search('AIT')); //..15
+
+               if the word we search is not available then it returns the negative number of -1.
+
+               console.log(course.search('hello')); //..-1
+                   
+*/
+
+        
+
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <!-------------------------------Form Validation------------------------->
+
+    <!--
+        With out using any functions
+        using validation function
+        using with javaScript
+        using RegEx
+    -->
+
+
+    <!-- 
+        client-side validation - browser side
+        server-side validation - it is a secure validation
+
+    -->
+
+    <!-- 
+        cdn - content delivary network
+     -->
+    
+
+     <!--  ** selecting of  input fields **
+
+        const nameValue = document.getElementById('name-value');
+        const emailValue = document.getElementById('email-value');
+        const pwdValue = document.getElementById('pwd-value');
+        const mobileValue = document.getElementById('phone-value');
+        const genValue = document.getElementById('gender-value');
+        const occvalue = document.getElementById('occ-value');
+        
+        const addBtn = document.getElementById('btn'); 
+
+
+        ** selecting error fiels  / these are all from span
+
+        const nameError = document.getElementById('name-error');
+        const emailError = document.getElementById('email-error');
+        const pwdError = document.getElementById('pwd-error');
+        const mobileError = document.getElementById('phone-error');
+        const genError = document.getElementById('gender-error');
+        const occError = document.getElementById('occ-error');
+  
+
+        *****   validation function for name field ********
+
+        function validateName(){
+            const name = nameValue.value;
+
+            if(name.length === 0){
+                nameError.innerHTML = 'Name is required';
+                
+                addBtn.disabled = true;
+                
+                return false;
+            }
+              nameError.innerHTML = `<i class='fas fa-check-circle icon'></i>`;
+              addBtn.disabled = false;
+              return true;
+        }
+
+        nameValue.addEventListener('keyup', validateName)
+        namevalue.addEventListener('blur', validateName)
+
+        const form = document.querySelector('form');
+
+        form.addEventlistener('submit', (event)=>{
+            event.preventDefault();
+            if(!validateName()){
+                return false;
+            }        
+        })
+      -->
+
+    
+</body>
+</html>

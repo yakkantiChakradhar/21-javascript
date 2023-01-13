@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // -------------Scope chaining ----------
+
+        /* 
+
+        Variable LookUp In Scope chain
+
+        */
+
+       /*  const name = 'peter';
+
+        function first(){
+            
+            const age = 25;
+            if(age >= 25){
+                const decade = 20;
+                var millenial = true;
+            }
+
+            function second(){
+                const job = 'Engineer';
+                console.log(`${name} is  a ${age} years-old ${job}`);
+
+                }
+                second();
+        }
+        first();
+
+ */
+/*---------constituents of Execution Context---------  */
+
+// -- Variable enviorment (or) Hoisting , "This" KeyWord --
+
+/* 
+Hoisting - 
+           Hoisiting is a phenomenon in which we can access the Variable or Function before its declaration.
+ */
+
+/* var x = 'hello world';
+
+function greet(){
+    console.log(" Welcome to Js");
+}
+greet();
+
+console.log(x);  */ 
+//-------
+// Welcome to js 
+// hello world
+//-------
+
+/* greet();
+
+console.log(x);  
+
+var x = 'hello world';
+
+function greet(){
+    console.log(" Welcome to Js");
+} */
+//---------
+// Welcome to Js
+// Undefined
+//---------
+
+
+
+/* 
+Hoisting: - 
+           Hositing is a phenomenon in which we can able to access certain variables and functions before it's actual declaration.
+
+
+           Before Execution, code is scanned for variable declaration and for each variable, a new property is created in the variable environment object
+------------------------------------------------------------------------------------------
+
+                                 Hoisted            Initial value                       Scope
+
+------------------------------------------------------------------------------------------
+Function declarion                yes                Actual function                      Block
+
+var varibale                      yes                undefined                           Function
+
+let and const variables           No        <UnInitialized>(TDZ-temperal dead zone)       Block
+
+Function expression and arrow     Depends if using var or let/const
+*/
+
+
+//------Function expression and arrow example
+
+/* 
+greet();
+var greet = function(){
+    console.log();
+}
+//------ greet is not a function
+
+greet();
+let greet = function(){
+    console.log();
+}
+
+//----- greet is not initialized
+
+*/
+
+
+
+/* 
+***********************
+Recursive Function: -
+``````````````````
+A function its call itself is known as recursion 
+
+ex: -
+
+
+function print(){
+    console.log("hello world");
+}
+print();
+// hello world
+
+let i=0
+function print(){
+    console.log("hello world");
+    i++;
+    if(i<5){
+        print()
+    }
+}
+print();
+
+    /* 
+        Hello world
+        Hello world
+        Hello World
+        Hello World
+        Hello World
+    */
+
+
+
+ /* 
+ Mutal recursion: -
+
+ function A calls function B and function B calls function A
+
+ function a(){
+    b()
+ }
+ 
+  function b(){
+    a()
+  }
+ */
+
+
+ /* 
+ *******Tempereal Dead Zone
+ if(true){
+    console.log(job);   `````  |
+    const name ='peter';       | --->// upto this its temperal dead zone  
+    // const age = 25;  _____  |
+    // let job = 'Engineer';
+ //}
+ //*/
+
+ /* 
+ // ------------- "This" key word 
+
+ ------------------------------------------------------------------------------------------
+
+Method --> This = <object that is calling the method>
+
+simple function call --> This = undefined whenever we are using a strict mode/globally(window)
+
+Arrow function --> This = <This of surrounding function(lexical this)>
+
+Event Listner --> This = <DOM element that handler is attached to>
+
+new, call, apply, bind --> Manually set this keyword.
+
+ ------------------------------------------------------------------------------------------
+
+ Method: - Defining a function inside an object is know as method
+
+ **
+ Special variale takes the value of the 'Owner ' of the function in which this keyword is used.
+
+ const peter = {
+    name: 'peter',age: 25,
+
+ msg: function(){
+    console.log(`${peter.name} is ${peter.age} years old`)
+ }
+  }
+  peter.msg();
+
+  ex: -
+
+  const apple = {
+    brand: 'Apple',
+    model: 'iphone 14 pro',
+    info: function(){
+        console.log(`${this.brand} ${this.model} was released on sep,2022`);
+    }
+  }
+
+  apple.info();
+
+
+
+  //*independent function call*, so in this 'This' keyword is used as globally in sloppy mode, where as when we use Strict mode there the function will be undefined.
+  
+  function greet(){
+    console.log(this);
+  }
+
+  greet();
+
+  Arrow function dosen't have This keyword function, but it has lexical This keyword function.
+
+  
+
+  
+ */
+
+
+
+
+
+
+
+/* 
+const btn = document.querySelector('button');
+
+btn.addEventListener('click',function ()=>{
+    console.log(this);
+})
+*/
+
+/* 
+
+primitive vs references
+
+
+*/
+
+
+</script>
+    <button>click here</button>
+</body>
+</html>

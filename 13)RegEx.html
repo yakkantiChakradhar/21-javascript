@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // ..........................RegEx..........................//
+
+
+        /* 
+          1)  Brackets - Defined the range of characters
+
+           // [abc]---> a,b,c
+
+          //  [^abc] --> any character except a,b or c
+            
+           // [a-z]--> any characters from a to z
+
+           // [A-Z]--> any characters from A to Z
+
+           // [a-zA-Z]--> any characters from a to z or A to Z
+
+            // [0-9]--> any numbers from 0-9
+
+          //  [^0-9]-->  not containing the  number from 0-9
+
+
+    //      2) Quantifiers - Which gives the info about repetition
+                
+    //          []? - occurs 0 or 1 , if range in brackets contains then it should be only one value if not it should be 0
+
+    //          []+ - it occurs minimum 1 time or maximum any time.
+
+    //          []* - it occurs 0 or more times.
+
+    //          []{n} - pattern will be repeated upto n times.
+
+    //          []{n,} - minimum n or more times.
+
+//               []{x,y} - definite range, occurs atleast x times and lessthan y times
+
+//      3)  Modifiers 
+
+//  g - performs global match
+//  i - it performs case insensitive match
+//  m - it performs multiline matching
+
+
+//     4) RegEx meta characters 
+
+//      \d --> [0-9], it will work as aliasing instead of using [0-9] we can simply use \d
+
+//     \D --> [^0-9]
+
+//     \w --> [a-zA-Z0-9]
+
+//     \W --> [^\w]
+
+//     \s --> to find spaces
+
+//     \  --> Escape charater tells computer to treat following character as search character for '+', '-'... 
+
+          //     */
+       
+           
+
+
+
+        /* 
+        Regular Expression
+        pattern exactly matches to the string
+
+        How to create a regex pattern 
+
+        we one variable 
+
+        //const pattern = new RegExp(pattren,attributes); // syntax
+
+        //const pattern = /to/g;  //which is used globally 
+
+        //cosnt str = 'welcome to js';
+
+        //const res = pattren.test(str);
+         
+
+        //console.log(res);
+
+      const num = '9493500651';
+
+        //we can use it in another way that mention below
+
+        //const res = str.match(pattren);
+
+        const res = num.match(/^[8,9][0-9]{9}$/);
+
+         console.log(res);
+             
+
+        */
+    </script>
+    
+</body>
+</html>

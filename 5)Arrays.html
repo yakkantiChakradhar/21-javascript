@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // ...................ARRAYS...........................
+
+         /* 
+            Arrays: -
+                      Array is a special type of variable, which stores multiple values using a special syntax. Every value is associated with numeric index starting with zero.
+
+                      Arrays is contineous memory allocation of same or different types.
+            
+            syntax: -
+                        let variable_name = [e1,e2,e3,....];
+
+                        console.log(variable_name[0]=e1);
+
+            ex: -     let strArr = ['one','two','three'];
+                     
+                      let numArr = [1,2,3,4];
+
+                      console.log(numArr);           //.. [1,2,3,4]
+
+                      console.log(numArr.length);    //..4
+
+                      let arr = [25,'hello', true, [1,2]]; //nested array
+
+                      console.log(arr);               //..[25,'hello',true,Array(2)]
+                
+    // ** There are two ways to create Arrays -
+                             
+          1) Array constructor: -
+                                  let strArr1 = new Array('one','two','three');
+
+                                  console.log(strArr1);  //..['one','two','three']
+
+                                  console.log(typeof strArr1);  //..object
+
+         2) Array literal: - 
+                              let num1=[28,2,5,4,3];
+
+                              console.log(num1);             //.. [28,2,5,4,3]
+
+                              console.log(typeof num1);      //..object
+
+        use of array we can iterate and access all the elements
+
+// ** Array Properties 
+
+    let fruits = ['apple', 'mango', 'kiwi', 'orange', 'grapes'];
+
+    for(let i=0; i<fruit.length; i++)
+    {
+        console.log(fruits[i]);
+    }
+
+    //....apple
+          mango
+          kiwi
+          orange
+          grapes
+          
+///////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////
+
+//......................Array Methods.............................
+let fruits = ['apple', 'mango', 'kiwi', 'orange', 'grapes'];
+
+1) push() -
+            Adding one or more elements to an array at the end of the list.
+
+            console.log(fruits.push('pineapple'));  
+            
+            //....['apple', 'mango', 'kiwi', 'orange', 'grapes','pineapple']
+2) pop() -
+            Removing an element from an array at the end of the list.
+
+            console.log(fruits.push());  
+            
+            //....['apple', 'mango', 'kiwi', 'orange', 'grapes']
+
+3) shift() -
+             It deletes an element from an array at beginning position, Order of elements in an array will be change
+
+             console.log(fruits.shift()); 
+
+             //....['mango', 'kiwi', 'orange', 'grapes']
+
+4) unshift() -
+             It adding an element from an array at beginning position,Order of elements in an array will be change
+
+
+             console.log(fruits.unshift()); 
+
+             //....['apple','mango', 'kiwi', 'orange', 'grapes']
+
+5) indexOf() - 
+              To get the index of an element
+
+              console.log(fruits.indexOf('kiwi'));  //....2
+
+              console.log(fruits.indexOf('banana'));  //....-1
+
+6) includes() - 
+                It evaluates whether the given element exist in an array or not.
+
+                console.log(fruits.includes('kiwi'));    //.... true
+
+                console.log(fruits.includes('banana'));  //.... false
+
+7) concat() -
+                 method creates a ne array by merging existing arrays.
+
+                 const arr1 = [1,2,3,4];
+
+                 const arr2 = [5,6,7,8];
+
+                 const arrNew = arr1.concat(arr2); //..[1,2,3,4,5,6,7,8]
+
+8) slice() -
+                 Extracts part of an  array.
+
+                 console.log(fruits.slice(1,4));  //..['mango', 'kiwi', 'orange']
+
+                 ** it extracts from index  1 to index 4
+
+9) splice() - 
+                 Extracts an element from the middle of an array.
+                 it will effects the original array
+
+                 const cities = ['bnglr','mum','del','chen'];
+
+                 console.log(cities.splice(2,1));         //..['bnglr','mum','chen']
+                 
+                console.log(cities.splice(2,0,'hyd'));   //..['bnglr','mum','hyd','chen']
+                 
+10) reverse() -
+                 To revers the elements in an array
+
+                 console.log(cities.reverse());  //...['chen','hyd','mum','bnglr']
+
+11) join() -
+               converts array in to string
+
+               console.log(cities.join());    //....bnglr,mum,hyd,chen
+
+               console.log(cities.join(" ")); //....bnglr mum hyd chen
+*/
+    </script>
+</body>
+</html>
